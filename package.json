@@ -1,0 +1,24 @@
+{
+  "name": "taxmap",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "data": "node scripts/build-areas.mjs",
+    "data:update": "node scripts/update-rates.mjs"
+  },
+  "dependencies": {
+    "maplibre-gl": "^6.17.0",
+    "polygon-clipping": "^0.15.7",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "shapefile": "^0.6.6",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "vite": "^8.3.6"
+  }
+}

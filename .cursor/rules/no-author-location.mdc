@@ -1,0 +1,26 @@
+---
+description: Do not identify the author's home, starting place, or the places they personally asked to research in docs, commits, chat, or global map copy.
+alwaysApply: true
+---
+
+# Do not identify the author
+
+Do not name the author's home, starting county, city, or the set of states they personally asked to research in the README, other user-facing docs, commit messages, or chat replies.
+
+Do not keep a named county as "the sample" if that name identifies the author. Describe it as one unnamed county.
+
+Do not list a handful of states as the levy states. In the README and in any global map sentence, describe every state the same way: a published levy stack when one is loaded, otherwise the Census median. A sentence about the place currently on screen may name that place and the file that covers it.
+
+The map opens on the country. Do not center the first view on the starting place.
+
+The rate skill may record a state's formula, source, and known bad shape. It must not name the starting county or city. Its description must not list a handful of states as the places that were requested.
+
+A GitHub issue reporting an actual rate is not applied automatically.
+
+## How to say it
+
+Bad: a real county named as "the detailed sample," a short list of states called out as the levy states, or a global legend that names only those states.
+
+Good: "One unnamed county has district polygons." "Where a published levy stack is loaded, the map uses it. Otherwise it uses the Census median."
+
+Do not repeat a stripped place name in neutral product language, in a claim that the name will be removed, or in instructions to another agent. A README edit does not replace this rule file. When this rule is wrong, change this file in the same turn.

@@ -1,0 +1,23 @@
+node_modules
+dist
+.env
+
+# Detailed district overlay. The outline identifies one county, so it stays local.
+public/districts.geojson
+public/rate-areas.geojson
+public/countywide.json
+public/meta.json
+
+# Local agent notes and skills stay out. Rules travel with the repo.
+.cursor/*
+!.cursor/rules/
+
+# Rebuilds the GeoJSON from source downloads. Not used by Docker or the app.
+scripts/
+
+# Source downloads. Runtime reads data/map and data/incoming/general only.
+data/*
+!data/map/
+!data/incoming/
+data/incoming/*
+!data/incoming/general/

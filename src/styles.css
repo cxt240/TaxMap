@@ -1,0 +1,183 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: #1c1915;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+}
+
+.panel {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  width: min(380px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 16px;
+  background: #fffdf8;
+  border: 1px solid #e4d9c8;
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.sub {
+  margin: 6px 0 0;
+  color: #5c5348;
+  font-size: 13px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9cebc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+  background: white;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #9a3412;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.hint {
+  margin: 6px 0 0;
+  color: #5c5348;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.legend {
+  margin-top: 14px;
+}
+
+.ramp {
+  height: 10px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #ffffe5, #fff7bc, #fec44f, #fe9929, #ec7014, #993404);
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  color: #5c5348;
+  font-size: 12px;
+}
+
+.place {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eadfce;
+}
+
+.total {
+  margin: 0;
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+}
+
+.total span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5c5348;
+}
+
+.stack {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.stack td {
+  padding: 4px 0;
+  vertical-align: baseline;
+}
+
+.stack td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.missing {
+  color: #9a3412;
+}
+
+.estimate {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.row strong {
+  font-variant-numeric: tabular-nums;
+}
+
+label.homestead {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.note,
+.error,
+.empty {
+  margin: 10px 0 0;
+  color: #5c5348;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.error {
+  color: #9a3412;
+}
+
+.maplibregl-ctrl-top-right {
+  top: 12px;
+}

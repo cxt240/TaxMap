@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: taxmap
+      POSTGRES_PASSWORD: taxmap
+      POSTGRES_DB: taxmap
+    volumes:
+      - taxmap-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U taxmap -d taxmap"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./server
+    environment:
+      DATABASE_URL: postgres://taxmap:taxmap@db:5432/taxmap
+      DATA_DIR: /data
+      INCOMING_DIR: /incoming
+      MAP_DIR: /map
+    volumes:
+      - ./public:/data:ro
+      - ./data/incoming/general:/incoming:ro
+      - ./data/map:/map:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 3s
+      timeout: 5s
+      retries: 60
+      start_period: 900s
+
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  taxmap-pg:
